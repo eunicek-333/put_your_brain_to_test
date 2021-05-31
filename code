@@ -1,0 +1,83 @@
+def main():
+    pass
+
+class Quiz:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+
+
+quiz_prompts = [
+    "What type of lion never roars?\n(a)'A dandelion'\n"
+    "(b)'A captured lion'\n"
+    "(c)'A lion cub'\n"
+    "(d)'A mountain lion\n"
+    "Your Answer:",
+    '\n'"Which fish is known as devil fish?\n(a)'Jelly fish'\n"
+    "(b)'eel'\n"
+    "(c)'Octopus'\n"
+    "(d)'Clown fish'\n"
+    "Your Answer:",
+    '\n'"What has 13 hearts, but no other organ?\n(a)'A soccer team'\n"
+    "(b)'A science lab'\n"
+    "(c)'An operating theatre'\n"
+    "(d)'A deck of cards'\n"
+    "Your Answer:",
+    '\n'"What is the meaning of the word PASSE?\n(a)'passed away'\n"
+    "(b)'outdated'\n"
+    "(c)'past'\n"
+    "(d)'present'\n"
+    "Your Answer:",
+    '\n'"I can’t be seen, but I can be heard. I won’t answer until spoken to. What am I?\n(a)'A dream'\n"
+    "(b)'Echo'\n"
+    "(c)'Children'\n"
+    "(d)'A voice'\n"
+    "Your Answer:",
+    '\n'"If you say my name, then I don’t exist anymore. What am I?\n(a)'Leprechaun'\n"
+    "(b)'Goblin'\n"
+    "(c)'Silence'\n"
+    "(d)'Today'\n"
+    "Your Answer:",
+    '\n'"The more you take, the more you leave behind. What are they?\n(a)'Memories'\n"
+    "(b)'Coins'\n"
+    "(c)'Candies'\n"
+    "(d)'Footsteps'\n"
+    "Your Answer:",
+    '\n',
+]
+name = input("Click enter if you are ready to put your brain to test: ").title()
+questions = [
+    Quiz(quiz_prompts[0], "a"),
+    Quiz(quiz_prompts[1], "c"),
+    Quiz(quiz_prompts[2], "d"),
+    Quiz(quiz_prompts[3], "b"),
+    Quiz(quiz_prompts[4], "b"),
+    Quiz(quiz_prompts[5], "c"),
+    Quiz(quiz_prompts[6], "d"),
+]
+
+
+def run(questions):
+    score = 0
+    for quiz in questions:
+        answer = input(quiz.prompt)
+        if answer == quiz.answer:
+            score += 1
+            print("Wow Right answer!!!")
+        else:
+            print("Wrong answer")
+            print('The correct answer is\t' + str(quiz.answer))
+    if score == len(questions):
+        print("\nCongratulations you scored the highest mark(7 out of 7)")
+        print("Thankyou! for spending your precious time")
+        print("Take care,Staysafe")
+    else:
+        print("\n{0}you scored {1} out of {2}.".format(name, score, len(questions)))
+        print("Thankyou! for spending your precious time")
+        print("Take care,Staysafe")
+
+
+run(questions)
+
+if __name__ == '__main__':
+    main()
